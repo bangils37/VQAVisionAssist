@@ -12,7 +12,7 @@
 
 VD:
 
-![image.png](image.png)
+![image.png](images/image.png)
 
 - **Hỏi:** What is going on here?
 T**rả lời:** A couple of people playing a game
@@ -23,7 +23,7 @@ T**rả lời:** Card game
 
 Được tham khảo từ bài báo: [Plug-and-Play VQA: Zero-shot VQA by Conjoining Large Pretrained Models with Zero Training", by Anthony T.M.H. et al](https://arxiv.org/pdf/2210.08773)
 
-![image.png](image%201.png)
+![image.png](images/image%201.png)
 
 Cách hoạt động của Model nằm trong 3 modules:
 

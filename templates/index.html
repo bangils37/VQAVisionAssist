@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voice Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <script src="{{ url_for('static', filename='scripts/scripts.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>VQA Real Time Interface</h1>
+        
+        <!-- Nút bắt đầu và kết thúc -->
+        <div class="controls">
+            <button onclick="startListening()">Bắt đầu</button>
+            <button onclick="stopListening()">Kết thúc</button>
+        </div>
+
+        <!-- Thông tin phản hồi -->
+        <div class="status-info">
+            <p id="status">Status</p>
+            <p id="question">Câu hỏi</p>
+            <p id="answer">Câu trả lời</p>
+        </div>
+
+        <!-- Khu vực video và ảnh chụp -->
+        <div class="display-area">
+            <div class="video-container">
+                <p>Video</p>
+                <video id="video" width="320" height="240" autoplay></video>
+            </div>
+            <div class="image-container">
+                <p>Capture Image</p>
+                <img id="capturedImage" width="320" height="240" alt="Captured Image will appear here">
+            </div>
+        </div>
+        
+        <!-- Thông báo trạng thái -->
+        <p id="statusMessage"></p>
+        <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+    </div>
+</body>
+</html>

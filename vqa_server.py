@@ -10,7 +10,7 @@ import nest_asyncio
 import io
 from lavis.common.gradcam import getAttMap
 from lavis.models import load_model_and_preprocess
-from vqamodel import VQAModel  # Import class VQAModel
+from vqa_model import VQAModel  # Import class VQAModel
 
 # setup device to use
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -53,6 +53,11 @@ async def submit(img: UploadFile = File(...), question: str = Form(...)):
     query.question = vqamodel.question = question
     query.answer = vqamodel.answering_full_step()
     return {"message": "Submit thành công", "answer": query.answer}
+
+# Tạo đường hầm ngrok cho server trên cổng 8000
+# ngrok.set_auth_token("2oH61KfdSjUSRyJ72jtsP4vK63e_6XgjNbcuwAGRKR4CXN35m")  
+# public_url = ngrok.connect(8000)
+# print("Public URL:", public_url)
 
 # Chạy server FastAPI với Uvicorn trên cổng 8000
 uvicorn.run(app, host="0.0.0.0", port=8000)

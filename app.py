@@ -4,12 +4,12 @@ from gtts import gTTS
 from pydub import AudioSegment
 from werkzeug.utils import secure_filename
 from pyngrok import ngrok
-import requests  # Thư viện để gửi HTTP request
+import requests 
 import io
 import os
 
 app = Flask(__name__)
-FASTAPI_URL = "http://localhost:8000"  # Đường dẫn tới server FastAPI đang chạy
+FASTAPI_URL = "http://localhost:8000"  # Đường dẫn tới vqa_server FastAPI đang chạy
 
 app.config['UPLOAD_FOLDER'] = 'static/uploads/' # Thư mục lưu trữ ảnh chụp từ camera
 

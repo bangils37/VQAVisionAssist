@@ -11,7 +11,7 @@ pip install torch
 pip install pillow
 pip install matplotlib
 pip install numpy
-pip install lavis
+pip install salesforce-lavis transformers==4.25
 pip install fastapi
 pip install pydantic
 pip install uvicorn

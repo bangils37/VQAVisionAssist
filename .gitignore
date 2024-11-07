@@ -1,0 +1,39 @@
+# Bỏ qua thư mục môi trường ảo
+venv/
+.env/
+
+# Byte-compiled / cached Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cấu hình môi trường IDE
+.vscode/
+.idea/
+
+# Thông tin nhật ký
+*.log
+
+# Tệp tạm thời hoặc không cần thiết khác
+*.tmp
+*.bak
+*.swp
+
+# Tệp dữ liệu lớn và tạm thời
+*.csv
+*.dat
+*.db
+*.sqlite3
+
+# Tệp hình ảnh tải lên tạm thời
+static/uploads/
+
+# Tệp liên quan đến Jupyter Notebook
+.ipynb_checkpoints
+
+# Tệp tạo bởi hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Tệp tạm thời khác
+*.~*

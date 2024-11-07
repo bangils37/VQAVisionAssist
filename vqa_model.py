@@ -1,3 +1,12 @@
+import torch
+import requests
+from PIL import Image
+from matplotlib import pyplot as plt
+import numpy as np
+
+from lavis.common.gradcam import getAttMap
+from lavis.models import load_model_and_preprocess
+
 class VQAModel:
     def __init__(self, img_url=None, question=None):
         self.img_data = None
@@ -45,21 +54,6 @@ class VQAModel:
         # 3. Question Answering - Answer the question by using the captions
         pred_answers = model.forward_qa(self.samples, num_captions=50)
         
-        # Lưu câu trả lời vào thuộc tính answer
-        self.answer = pred_answers[0]
-        return self.answer
-
-    def answering(self):
-        # Tiền xử lý
-        raw_image = Image.open(io.BytesIO(self.img_data)).convert("RGB")
-        self.image = vis_processors["eval"](raw_image).unsqueeze(0).to(device)
-        processed_question = txt_processors["eval"](self.question)
-        self.samples = {"image": self.image, "text_input": [processed_question]}
-        
-        # Gọi hàm dự đoán và lấy kết quả
-        pred_answers, caption, gradcam = model.predict_answers(self.samples, num_captions=50, num_patches=20)
-        
-        print('Question: {} \nPredicted answer: {}'.format(self.question, pred_answers[0]))
         # Lưu câu trả lời vào thuộc tính answer
         self.answer = pred_answers[0]
         return self.answer

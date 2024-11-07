@@ -21,14 +21,6 @@ model, vis_processors, txt_processors = load_model_and_preprocess(name="pnp_vqa"
 # Sử dụng nest_asyncio để chạy Uvicorn trong notebook
 nest_asyncio.apply()
 
-class VQAModel:
-    def __init__(self, img_url=None, question=None):
-        self.img_data = None
-        self.question = question
-        self.answer = None
-        self.image = None
-        self.samples = None
-
 # Khởi tạo ứng dụng FastAPI
 app = FastAPI()
 
@@ -55,7 +47,7 @@ async def submit(img: UploadFile = File(...), question: str = Form(...)):
     return {"message": "Submit thành công", "answer": query.answer}
 
 # Tạo đường hầm ngrok cho server trên cổng 8000
-# ngrok.set_auth_token("2oH61KfdSjUSRyJ72jtsP4vK63e_6XgjNbcuwAGRKR4CXN35m")  
+# ngrok.set_auth_token("YOUR_NGROK_AUTH_TOKEN")  
 # public_url = ngrok.connect(8000)
 # print("Public URL:", public_url)
 
